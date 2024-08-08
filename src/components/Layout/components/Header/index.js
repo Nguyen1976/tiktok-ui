@@ -17,7 +17,22 @@ const cx = classNames.bind(styles);
 const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthAfrica} />,
-        title: 'English'
+        title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English'
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Vietnamese'
+                }
+            ]
+        }
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -39,6 +54,17 @@ function Header() {
             setSearchResult([])
         }, 3000)
     }, [])
+
+    const handleMenuChange = (menuItem) => {
+        switch (menuItem.type) {
+            case 'language':
+                // handle language change
+                break;
+            default:
+                // handle other menu item
+                break;
+        }
+    }
 
     return (
         <header className={cx('wrapper')}>
@@ -76,6 +102,7 @@ function Header() {
                     <Button primary>Log in</Button>
                     <Menu
                         items={MENU_ITEMS}
+                        onChange={handleMenuChange}
                     >
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
