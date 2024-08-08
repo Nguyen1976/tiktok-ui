@@ -4,7 +4,7 @@
 
     .menu-item {
         margin-left: 0;
-        color: var(--black);
+        color: var(--text-color);
     }
 }
 
@@ -16,8 +16,12 @@
     width: 100%;
     justify-content: flex-start;
     border-radius: unset;
-    font-weight: 550;
+    font-weight: 600;
     padding: 11px 16px;
+
+    &.separate {
+        border-top: 1px solid rgba(22, 24, 35, 0.12);
+    }
     
     &:hover {
         background-color: rgba(22, 24, 35, 0.03);

@@ -37,18 +37,21 @@ function Menu({ children, items, onChange }) {
     return (
         <Tippy
             interactive
-            delay={[0, 300]}
+            delay={[0, 700]}
+            offset={[12, 8]}
             placement="bottom-end"
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
                     <PopperWrapper className={cx('menu-popper')}>
                         {history.length > 1 && <Header title="Language" onBack={() => {
-                            setHistory(prev => prev.splice(prev.length - 1, 1))
+                            setHistory(prev => prev.slice(0, -1))
                         }}/>}
                         {renderItems()}
                     </PopperWrapper>
                 </div>
             )}
+            //Để đặt lại trạng thái ban đầu khi tooltip bị ẩn đi bằng cách tạo mảng mới từ mảng cũ vì slice trả về 1 mảng mới
+            onHide={() => setHistory((prev) => prev.slice(0, 1))}
         >
             {children}
         </Tippy>
