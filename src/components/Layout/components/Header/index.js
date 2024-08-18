@@ -1,10 +1,12 @@
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleQuestion, faCoins, faEarthAfrica, faEllipsisVertical, faGear, faKeyboard, faSignOut, faUser } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
 
+import routesConfig from '~/config/routes'
 import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
@@ -90,7 +92,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <img src={images.logo} alt="TikTok" />
+                <Link to={routesConfig.home} className={cx('logo-link')}>
+                    <img src={images.logo} alt="Tiktok"/>
+                </Link>
                 
                 <Search />
                 
@@ -124,7 +128,7 @@ function Header() {
                         onChange={handleMenuChange}
                         >
                         {currentUser ? (
-                            <Image src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/abd95ae25a622e8cb244f24cdefce94f.jpeg?lk3s=30310797&nonce=32640&refresh_token=e7af3c6e3e67ace8903858f321a4ecd9&x-expires=1723215600&x-signature=rS6swTyf9MgCe5D9AyuAok%2F7PcE%3D&shp=30310797&shcp=-" className={cx('user-avatar')} alt="Nguyen Van A"/>
+                            <Image src="https://p9-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/abd95ae25a622e8cb244f24cdefce94f.jpeg?lk3s=30310797&nonce=85679&refresh_token=aec4d86a92504c502fd7a03762fcda70&x-expires=1724079600&x-signature=fnAn%2FoD6O2oJMGso8fGWR3M%2F9LI%3D&shp=30310797&shcp=-" className={cx('user-avatar')} alt="Nguyen Van A"/>
                         ) : (
                             <button className={cx('more-btn')}>
                                 <FontAwesomeIcon icon={faEllipsisVertical} />
