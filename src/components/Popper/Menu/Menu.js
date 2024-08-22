@@ -31,6 +31,10 @@ function Menu({ children, items, hideOnClick = false, onChange, ...passProps }) 
             }}/>
         });
     };
+
+    const handleResetToFirstPage = () => {
+        setHistory((prev) => prev.slice(0, 1));
+    }
     return (
         <Tippy
             {...passProps}
@@ -50,7 +54,7 @@ function Menu({ children, items, hideOnClick = false, onChange, ...passProps }) 
                 </div>
             )}
             //Để đặt lại trạng thái ban đầu khi tooltip bị ẩn đi bằng cách tạo mảng mới từ mảng cũ vì slice trả về 1 mảng mới
-            onHide={() => setHistory((prev) => prev.slice(0, 1))}
+            onHide={handleResetToFirstPage}
         >
             {children}
         </Tippy>
