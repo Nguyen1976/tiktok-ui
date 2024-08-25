@@ -1,9 +1,11 @@
 import classNames from 'classnames/bind';
+
 import styles from './Sidebar.module.scss'
 import Menu, { MenuItem } from './Menu';
 import { HomeIcon, HomeActiveIcon, UserGroupIcon, UserGroupActiveIcon, LiveIcon, LiveActiveIcon } from '~/components/Icons'
 import config from '~/config';
 import SuggestedAccounts from '~/components/SuggestedAccounts';
+import Footer from './Footer';
 
 const cx = classNames.bind(styles)
 
@@ -17,7 +19,7 @@ function Sidebar() {
             </Menu>
 
             <SuggestedAccounts label='Suggested accounts'/>
-            <SuggestedAccounts label='Following accounts'/>
+            <Footer />
         </aside>
     );
 }
