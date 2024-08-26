@@ -79,7 +79,7 @@ function Footer() {
                 /> 
                 <Tippy
                     interactive
-                    offset={[0, 10]}
+                    offset={[-20, 10]}
                     placement='top'
                     render={renderPreview}
                 >
