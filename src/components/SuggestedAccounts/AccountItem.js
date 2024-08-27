@@ -7,6 +7,7 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import styles from './SuggestedAccounts.module.scss'
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import AccountPreview from './AccountPreview/AccountPreview';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles)
 
@@ -32,7 +33,7 @@ function AccountItem() {
                 render={renderPreview}
            >
                 <div className={cx('account-item')}>
-                    <img 
+                    <Image 
                         className={cx('avatar')}
                         src='https://p9-sign-sg.tiktokcdn.com/aweme/720x720/tos-alisg-avt-0068/7108213275313537025.jpeg?lk3s=a5d48078&nonce=51036&refresh_token=75fa459d32da5c0bedaf33227e758caa&x-expires=1724637600&x-signature=dE1QurktICLmpTmzBtpteZOfCPo%3D&shp=a5d48078&shcp=81f88b70' alt='Nguyen'
                     />
@@ -48,6 +49,8 @@ function AccountItem() {
        </div>
     );
 }
+
+
 
 
 export default AccountItem;

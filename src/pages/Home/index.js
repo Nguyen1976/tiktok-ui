@@ -1,6 +1,10 @@
+import Content from '~/layouts/components/Content'
+
 function Home() {
     return ( 
-        <h2 style={{height: 2000}}>Home page</h2>
+        <div style={{height: 2000}}>
+            <Content />
+        </div>
     );
 }
 
