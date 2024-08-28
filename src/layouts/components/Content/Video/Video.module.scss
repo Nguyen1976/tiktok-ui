@@ -2,13 +2,28 @@
     position: relative;
     width: 100%;
     overflow: hidden;
+
+    &:hover {
+        .overlay {
+            transform: translateY(-60px);
+        }
+
+    }
+
 }
 
 .overlay {
     position: absolute;
     color: var(--white);
+    transform: translateY(0);
     bottom: 10px;
     left: 10px;
+    transition-delay: 0.3s;
+    transition: 0.5s;
+
+    &:hover {
+        transform: translateY(-60px);
+    }
 }
 
 .name {
@@ -31,4 +46,13 @@
 .check {
     color: #20d5ec;
     margin-left: 10px;
+}
+
+.music {
+    display: flex;
+    align-items: center;
+}
+
+.music-name {
+    margin-left: 8px;
 }
