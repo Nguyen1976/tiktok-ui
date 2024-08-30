@@ -1,29 +1,27 @@
-.video {
+.wrapper {
     position: relative;
     width: 100%;
-    overflow: hidden;
-
-    &:hover {
-        .overlay {
-            transform: translateY(-60px);
-        }
-
+    cursor: pointer;
+}
+.wrapper:hover {
+    .overlay {
+        transform: translateY(-60px);
     }
 
 }
 
+.overlay-hover,
 .overlay {
     position: absolute;
     color: var(--white);
     transform: translateY(0);
     bottom: 10px;
     left: 10px;
-    transition-delay: 0.3s;
-    transition: 0.5s;
+    transition: 0.7s;
+}
 
-    &:hover {
-        transform: translateY(-60px);
-    }
+.overlay-hover {
+    transform: translateY(-60px);
 }
 
 .name {
@@ -55,4 +53,43 @@
 
 .music-name {
     margin-left: 8px;
+}
+
+.options {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    padding: 10px;
+    font-size: 2.6rem;
+    color: var(--white);
+}
+
+.menu-popper {
+    width: 230px;
+}
+
+.menu-list {
+    z-index: 1;
+}
+
+.item {
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.item__title {
+    margin-left: 10px;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+/* Tùy chỉnh ReactPlayer controls */
+.react-player__controls {
+    opacity: 1 !important;
+    transition: none !important;
 }
