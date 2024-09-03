@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import React from 'react';
+// import { useState } from 'react'
 
 import styles from './Content.module.scss';
 import Video from './Video';
@@ -8,15 +9,21 @@ import config from '~/config';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark, faCommentDots, faHeart, faPlus, faShare } from '@fortawesome/free-solid-svg-icons';
 import Image from '~/components/Image';
+
 const cx = classNames.bind(styles);
 
-function Content({ isPlay }) {
+function Content({ autoScrolling, onToggleAutoScrolling }) {
+    
+
     return (
         <div 
             className={cx('wrapper')}
         >
             <div className={cx('video')}>
-                <Video isPlay={isPlay}/>
+                <Video 
+                    autoScrolling={autoScrolling} 
+                    onToggleAutoScrolling={onToggleAutoScrolling} 
+                />
             </div>
             <div className={cx('section-bar')}>
                 <div className={cx('avatar', 'container')}>
